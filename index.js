@@ -23,5 +23,16 @@ function formSubmitHandler (event) {
 }
 formElement.addEventListener('submit', formSubmitHandler); 
 
+//нажатие кнопки редактирования
+let editButton = document.querySelector('.profile__edit');
+let page = document.querySelector('.page');
+let edit = document.querySelector('.edit');
 
+
+editButton.addEventListener('click', ()=> {
+
+});
+
+
+//нажатие крестика
 

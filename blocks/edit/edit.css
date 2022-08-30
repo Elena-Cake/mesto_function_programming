@@ -1,13 +1,29 @@
 .edit {
+    width: 470px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 32px;
+    grid-template-rows: 32px auto;
+    gap: 8px;
+    grid-template-areas: 
+    '. close'
+    'container .';
+}
+
+.edit__close {
+    grid-area: close;
+    width: 32px;
+}
+
+.edit__container {
+    grid-area: container;
     max-width: calc(430px - 36px - 36px);
     width: 100%;
     height: calc(330px - 34px - 37px);
-    margin: auto;
     background-color: #fff;
     border-radius: 10px;
     color: #000;
-    padding: 34px 36px 37px;
-}
+    padding: 34px 36px 37px;}
 
 .edit__title{
     margin: 0 0 54px;
