@@ -1,5 +1,6 @@
 .profile__person {
-    width: calc(100% * 486/880);
+    max-width: 486px;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
