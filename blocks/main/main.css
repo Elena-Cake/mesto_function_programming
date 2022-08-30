@@ -9,3 +9,9 @@
         width: 90%;
     }
 }
+
+@media screen and (max-width: 640px) {
+    .main {
+        width: 88%;
+    }
+}
