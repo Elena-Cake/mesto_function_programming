@@ -14,5 +14,11 @@
 /* elements */
 @import url(../blocks/elements/elements.css);
 
+/* element */
+@import url(../blocks/element/element.css);
+
+/* edit */
+@import url(../blocks/edit/edit.css);
+
 /* footer */
 @import url(../blocks/footer/footer.css);

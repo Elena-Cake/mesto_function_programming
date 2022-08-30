@@ -12,23 +12,76 @@
             <hr class="header__line">
         </header>
         <main class="main">
+            <section  class="edit">
+                <h2 class="edit__title">Редактировать профиль</h2>
+                <form class="edit__form">
+                    <input class="edit__input edit__input-name" type="text">
+                    <input class="edit__input edit__input-work" type="text">
+                </form>
+                <button class="edit__save">Сохранить</button>
+            </section>
             <section class="profile">
                 <div class="profile__person">
                     <img class="profile__avatar" src="./images/profile_foto.jpg" alt="фото Жак-Ив Кусто">
                     <div class="profile__info">
-                        <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <img src="./images/profile_edit.svg" alt="иконка редактирования профиля">
+                        <div class="profile__container">
+                            <h1 class="profile__name">Жак-Ив Кусто</h1>
+                            <img class="profile__edit" src="./images/profile_edit.svg" alt="иконка редактирования профиля">
+                        </div>
                         <p class="profile__work">Исследователь океана</p>
                     </div>
                 </div>
                 <img src="./images/profile_plus.svg" alt="иконка добавления фото">
             </section>
             <section class="elements">
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_karachaevsk.jpg" alt="Карачаевск">
+                    <div class="element__place">
+                        <p class="element__name">Карачаевск</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_elbrus.jpg" alt="Гора Эльбрус">
+                    <div class="element__place">
+                        <p class="element__name">Гора Эльбрус</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_dombay.jpg" alt="Домбай">
+                    <div class="element__place">
+                        <p class="element__name">Домбай</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_hallstatt.jpg" alt="Гальштат">
+                    <div class="element__place">
+                        <p class="element__name">Гальштат</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_landmannalaugar.jpg" alt="Ландманналаугар ">
+                    <div class="element__place">
+                        <p class="element__name">Ландманналаугар</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__foto" src="./images/elements_nizshninovgorod.jpg" alt="Нижний Новгород">
+                    <div class="element__place">
+                        <p class="element__name">Нижний Новгород</p>
+                        <div class="element__like"></div>
+                    </div>
+                </div>
             </section>
         </main>
         <footer class="footer">
-            
+            <p class="footer__author">&#169; 2020 Mesto Russia</p>
         </footer>
     </div>
+    <script src="./index.js"></script>
 </body>
 </html>
