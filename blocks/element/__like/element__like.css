@@ -1,5 +1,11 @@
 .element__like {
     background-image: url(../../images/elements_heart.svg);
     width: 22px;
-    height: 19px;
+    height: 19px;    
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.element__like:hover {
+    opacity: .5;
 }

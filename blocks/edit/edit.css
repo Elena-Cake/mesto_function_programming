@@ -9,5 +9,4 @@
     grid-template-areas: 
     '. close'
     'container .';
-    display: none;
 }

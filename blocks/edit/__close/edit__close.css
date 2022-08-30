@@ -1,4 +1,10 @@
 .edit__close {
     grid-area: close;
     width: 32px;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.edit__close:hover {
+    opacity: .6;
 }

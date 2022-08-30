@@ -3,4 +3,10 @@
     width: 150px;
     height: 50px;
     position: relative;
+    cursor: pointer;
+    transition: opacity 1s ease;
+}
+
+.profile__add:hover {
+    opacity: .6;
 }

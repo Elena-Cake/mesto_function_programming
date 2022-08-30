@@ -8,4 +8,10 @@
     font-size: 18px;
     line-height: 22px;
     text-align: center;
+    transition: opacity ease 1s;
+    cursor: pointer;
+}
+
+.edit__save:hover {
+    opacity: 0.8;
 }
