@@ -1,0 +1,9 @@
+.edit__hide {
+    display: grid;
+    grid-template-columns: auto 32px;
+    grid-template-rows: 32px auto;
+    gap: 8px;
+    grid-template-areas: 
+    '. close'
+    'container .';
+}

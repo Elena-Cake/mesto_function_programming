@@ -30,9 +30,14 @@ let edit = document.querySelector('.edit');
 
 
 editButton.addEventListener('click', ()=> {
-
+    edit.style.display = 'block';
 });
 
 
 //нажатие крестика
+let closeButton = document.querySelector('.edit__close')
+closeButton.addEventListener('click', ()=> {
+    edit.style.display = 'none';
+});
+
 
