@@ -1,0 +1,4 @@
+.edit__close {
+    grid-area: close;
+    width: 32px;
+}

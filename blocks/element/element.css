@@ -5,35 +5,3 @@
     overflow: hidden;
     color: #000;
 }
-
-.element__foto {
-    width: 100%;
-    height: 282px;
-}
-
-.element__place {
-    width: 246px;
-    margin: 25px auto 31px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.element__name {
-    max-width: 85%;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 29px;
-    margin: 0;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-}
-
-.element__like {
-    background-image: url(../../images/elements_heart.svg);
-    width: 22px;
-    height: 19px;
-}
-

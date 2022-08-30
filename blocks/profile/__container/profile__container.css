@@ -1,0 +1,5 @@
+.profile__container {
+    width: 336px;
+    display: flex;
+    justify-content: space-between;
+}
