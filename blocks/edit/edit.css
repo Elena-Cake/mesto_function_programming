@@ -1,5 +1,6 @@
 .edit {
-    width: 470px;
+    max-width: 470px;
+    width: 54%;
     margin: auto;
     display: grid;
     grid-template-columns: auto 32px;
