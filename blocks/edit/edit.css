@@ -4,8 +4,14 @@
     margin: auto;
     display: none;
     position: absolute;
-    top: 195px;
+    top: 16.5%;
     right: 50%;
     transform: translate(50%, 0);
     z-index: 2;
+}
+
+@media screen and (max-width: 1080px) {
+    .edit { 
+        width: 80%;
+    }
 }

@@ -26,6 +26,11 @@ editButton.addEventListener('click', ()=> {
 });
 
 
+// Скрываю форму при загрузке страницы
+    page.classList.remove('page__edit')
+    edit.style.display = 'none';
+
+
 //нажатие крестика
 let closeButton = document.querySelector('.edit__close')
 closeButton.addEventListener('click', ()=> {
