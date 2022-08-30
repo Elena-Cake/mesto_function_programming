@@ -14,15 +14,6 @@ nameInput.placeholder = titleName.textContent;
 jobInput.placeholder = titleJob.textContent;
 
 
-// Обработчик «отправки» формы
-function formSubmitHandler (event) {
-    event.preventDefault(); 
-
-    titleName.textContent = nameInput.value;
-    titleJob.textContent = jobInput.value;
-}
-formElement.addEventListener('submit', formSubmitHandler); 
-
 //нажатие кнопки редактирования
 let editButton = document.querySelector('.profile__edit');
 let page = document.querySelector('.page');
@@ -30,6 +21,7 @@ let edit = document.querySelector('.edit');
 
 
 editButton.addEventListener('click', ()=> {
+    page.classList.add('page__edit');
     edit.style.display = 'block';
 });
 
@@ -37,7 +29,19 @@ editButton.addEventListener('click', ()=> {
 //нажатие крестика
 let closeButton = document.querySelector('.edit__close')
 closeButton.addEventListener('click', ()=> {
+    page.classList.remove('page__edit')
     edit.style.display = 'none';
 });
 
+
+// Обработчик «отправки» формы
+function formSubmitHandler (event) {
+    event.preventDefault(); 
+
+    titleName.textContent = nameInput.value;
+    titleJob.textContent = jobInput.value;
+    edit.style.display = 'none';
+
+}
+formElement.addEventListener('submit', formSubmitHandler); 
 

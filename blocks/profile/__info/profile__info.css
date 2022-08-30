@@ -1,4 +1,6 @@
 .profile__info {
+    width: calc(100%* 336/486);
     align-items: center;
     column-gap: 16px;
+    margin-left: 10px;
 }

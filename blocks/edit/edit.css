@@ -3,4 +3,9 @@
     width: 54%;
     margin: auto;
     display: none;
+    position: absolute;
+    top: 195px;
+    right: 50%;
+    transform: translate(50%, 0);
+    z-index: 2;
 }

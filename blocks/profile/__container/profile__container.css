@@ -1,5 +1,10 @@
 .profile__container {
-    width: 336px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen and (max-width: 1080px) {
+    .profile__container {
+    }
 }
