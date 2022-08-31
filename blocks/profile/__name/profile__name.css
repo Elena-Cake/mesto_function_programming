@@ -16,6 +16,7 @@
     .profile__name { 
         font-size: 27px;
         line-height: 33px;
+        letter-spacing: 0.05em;
     }
 }
 

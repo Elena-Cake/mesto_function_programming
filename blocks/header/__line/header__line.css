@@ -1,12 +1,13 @@
 .header__line {
     width: 100%;
     color: #545454;
-    margin-top: 35px;
+    margin: 35px 0 0 0;
     opacity: 0.7;
 }
 
 @media screen and (max-width: 640px) {
-    .header__line { 
+    .header__line {
+        margin-top: 27px; 
         width: 100%;
     }
 }
