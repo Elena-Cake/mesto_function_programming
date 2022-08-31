@@ -42,9 +42,13 @@ closeButton.addEventListener('click', ()=> {
 // Обработчик «отправки» формы
 function formSubmitHandler (event) {
     event.preventDefault(); 
-
-    titleName.textContent = nameInput.value;
+    if (nameInput.value !== '') {
+        titleName.textContent = nameInput.value;
+    };
+    if (jobInput.value !== '') {
     titleJob.textContent = jobInput.value;
+    };
+    page.classList.remove('page__edit');
     edit.style.display = 'none';
 
 }

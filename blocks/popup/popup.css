@@ -1,4 +1,4 @@
-.edit {
+.popup {
     max-width: 470px;
     width: 54%;
     margin: auto;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .edit { 
+    .popup { 
         width: 80%;
     }
 }

@@ -1,4 +1,4 @@
-.edit__container {
+.popup__container {
     grid-area: container;
     max-width: calc(430px - 36px - 36px);
     width: 100%;
