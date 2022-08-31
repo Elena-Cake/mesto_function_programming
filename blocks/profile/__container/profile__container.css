@@ -3,3 +3,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+@media screen and (max-width: 640px) {
+    .profile__container { 
+        width: calc(100% *217/282);
+        margin-left: calc(100% * 46/282);
+    }
+}
