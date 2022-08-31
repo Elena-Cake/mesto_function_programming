@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 640px) {
-    .profile__edit { 
+    .profile__edit {
         width: 18px;
         margin-left: 10px;
     }

@@ -10,13 +10,13 @@
 }
 
 @media screen and (max-width: 1080px) {
-    .profile__name { 
+    .profile__name {
         font-size: 4vw;
     }
 }
 
 @media screen and (max-width: 640px) {
-    .profile__name { 
+    .profile__name {
         font-size: 27px;
         line-height: 33px;
     }
