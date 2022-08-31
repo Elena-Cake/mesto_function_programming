@@ -50,8 +50,3 @@ function formSubmitHandler (event) {
 }
 btnSave.addEventListener('click', formSubmitHandler); 
 
-//отработка enter
-document.addEventListener( 'keyup', event => {
-    if( event.code === 'Enter' ) btnSave.click();
-});
-
