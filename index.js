@@ -2,6 +2,7 @@
 // работа с формой
 
 let formElement =  document.querySelector('.popup__form');
+let btnSave = document.querySelector('.popup__save');
 // Находим поля формы в DOM
 let nameInput = document.querySelector('.popup__input-name');
 let jobInput = document.querySelector('.popup__input-job');
@@ -47,5 +48,10 @@ function formSubmitHandler (event) {
     popup.classList.remove('popup_opened');
 
 }
-formElement.addEventListener('submit', formSubmitHandler); 
+btnSave.addEventListener('click', formSubmitHandler); 
+
+//отработка enter
+document.addEventListener( 'keyup', event => {
+    if( event.code === 'Enter' ) btnSave.click();
+});
 
