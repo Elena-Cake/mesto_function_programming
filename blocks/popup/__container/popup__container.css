@@ -1,6 +1,5 @@
 .popup__container {
-    max-width: 470px;
-    width: 54%;
+    width: 470px;
     margin: auto;
     position: absolute;
     top: 16.5%;
@@ -8,16 +7,20 @@
     transform: translate(50%, 0);
     z-index: 2;
     display: grid;
-    grid-template-columns: auto 32px;
-    grid-template-rows: 32px auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     gap: 8px;
     grid-template-areas: 
     '. close'
     'container .';
 }
 
-@media screen and (max-width: 1080px) {
-    .popup__container { 
-        width: 80%;
+@media screen and (max-width: 640px) {
+    .popup__container {
+        width: 282px;
+        grid-template-areas: 
+        '. close'
+        'container container';
+        gap: 16px;
     }
 }

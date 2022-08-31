@@ -8,3 +8,10 @@
     color: #000;
     padding: 34px 36px 37px;
 }
+
+@media screen and (max-width: 640px) {
+    .popup__form {
+        width: calc(100% - 22px - 22px);
+        padding: 25px 22px;
+    }
+}
