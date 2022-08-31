@@ -1,0 +1,10 @@
+.popup__form {
+    grid-area: container;
+    max-width: calc(430px - 36px - 36px);
+    width: 100%;
+    height: calc(330px - 34px - 37px);
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+    padding: 34px 36px 37px;
+}
