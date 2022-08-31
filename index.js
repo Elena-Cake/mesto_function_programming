@@ -11,8 +11,8 @@ let titleName = document.querySelector('.profile__name');
 let titleJob = document.querySelector('.profile__job');
 
 //присвоим значения title инпутам
-nameInput.placeholder = titleName.textContent;
-jobInput.placeholder = titleJob.textContent;
+nameInput.value = titleName.textContent;
+jobInput.value = titleJob.textContent;
 
 
 //нажатие кнопки редактирования
@@ -39,12 +39,8 @@ closeButton.addEventListener('click', ()=> {
 // Обработчик «отправки» формы
 function formSubmitHandler (event) {
     event.preventDefault(); 
-    if (nameInput.value !== '') {
-        titleName.textContent = nameInput.value;
-    };
-    if (jobInput.value !== '') {
+    titleName.textContent = nameInput.value;
     titleJob.textContent = jobInput.value;
-    };
     popup.classList.remove('popup_opened');
 
 }
