@@ -1,4 +1,4 @@
-.popup__close {
+.popup__btn-close {
     grid-area: close;
     width: 32px;
     height: 32px;
@@ -6,16 +6,16 @@
     transition: opacity 1s ease;
     background-image: url(../../../images/edit_close.svg);
     background-size: contain;
-    background-color: rgba(218, 38, 38, 0); 
+    background-color: transparent; 
     border: 0;
 }
 
-.popup__close:hover {
+.popup__btn-close:hover {
     opacity: .6;
 }
 
 @media screen and (max-width: 640px) {
-    .popup__close {
+    .popup__btn-close {
         width: 20px;
         height: 20px;
     }

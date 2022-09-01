@@ -2,18 +2,18 @@
 //  РАБОТА С ФОРМОЙ
 //_____________________________
 
-let formElement =  document.querySelector('.popup__form');
-let btnSave = document.querySelector('.popup__save');
+const formElement =  document.querySelector('.popup__form');
+const btnSave = document.querySelector('.popup__btn-save');
 // находим поля формы в DOM
-let nameInput = document.querySelector('.popup__input_name');
-let jobInput = document.querySelector('.popup__input_job');
+const nameInput = document.querySelector('.popup__input_type_name');
+const jobInput = document.querySelector('.popup__input_type_job');
 // находим значения profile
-let titleName = document.querySelector('.profile__name');
-let titleJob = document.querySelector('.profile__job');
+const titleName = document.querySelector('.profile__name');
+const titleJob = document.querySelector('.profile__job');
 // для вывода и скрытия попап в видимой зоне
-let btnEdit = document.querySelector('.profile__edit');
-let popup = document.querySelector('.popup');
-let btnClose = document.querySelector('.popup__close');
+const btnEdit = document.querySelector('.profile__btn-edit');
+const popup = document.querySelector('.popup');
+const btnClose = document.querySelector('.popup__btn-close');
 
 // скрываю форму при загрузке страницы
 closePopup();
@@ -34,15 +34,16 @@ function closePopup() {
 // нажатие кнопки редактирования
 btnEdit.addEventListener('click', openPopup);
 
-// обработчик «отправки» формы
-function formSubmitHandler (event) {
+// // обработчик «отправки» формы
+function formSubmitHandler (event) { 
     event.preventDefault(); 
-    titleName.textContent = nameInput.value;
-    titleJob.textContent = jobInput.value;
+    titleName.textContent = nameInput.value; 
+    titleJob.textContent = jobInput.value; 
     closePopup();
-};
-btnSave.addEventListener('submit', formSubmitHandler); 
+} 
+formElement.addEventListener('submit', formSubmitHandler);  
 
-// нажатие крестика
+ // нажатие крестика
 btnClose.addEventListener('click', closePopup);
 
+ 
