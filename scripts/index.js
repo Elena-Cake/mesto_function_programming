@@ -1,5 +1,6 @@
-
-// работа с формой
+//_____________________________
+// РАБОТА С ФОРМОЙ
+//_____________________________
 
 let formElement =  document.querySelector('.popup__form');
 let btnSave = document.querySelector('.popup__save');
@@ -17,7 +18,7 @@ let btnClose = document.querySelector('.popup__close');
 // Скрываю форму при загрузке страницы
 closePopup();
 
-//добавляем и удаляем попап из видимой части
+//добавляем и скрываем попап
 function addPopup() {
      popup.classList.add('popup_opened');
     //присвоим значения title инпутам
