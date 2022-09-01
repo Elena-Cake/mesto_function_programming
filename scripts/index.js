@@ -4,8 +4,8 @@
 let formElement =  document.querySelector('.popup__form');
 let btnSave = document.querySelector('.popup__save');
 // Находим поля формы в DOM
-let nameInput = document.querySelector('.popup_type_name');
-let jobInput = document.querySelector('.popup_type_job');
+let nameInput = document.querySelector('.popup__input_name');
+let jobInput = document.querySelector('.popup__input_job');
 //Находим значения profile
 let titleName = document.querySelector('.profile__name');
 let titleJob = document.querySelector('.profile__job');
