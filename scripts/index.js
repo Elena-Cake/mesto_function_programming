@@ -14,16 +14,16 @@ let btnEdit = document.querySelector('.profile__edit');
 let popup = document.querySelector('.popup');
 let btnClose = document.querySelector('.popup__close');
 
-//присвоим значения title инпутам
-nameInput.value = titleName.textContent;
-jobInput.value = titleJob.textContent;
-
 // Скрываю форму при загрузке страницы
 closePopup();
 
 //добавляем и удаляем попап из видимой части
 function addPopup() {
      popup.classList.add('popup_opened');
+    //присвоим значения title инпутам
+    nameInput.value = titleName.textContent;
+    jobInput.value = titleJob.textContent;
+    nameInput.focus();
 };
 function closePopup() {
     popup.classList.remove('popup_opened');
@@ -39,7 +39,9 @@ btnClose.addEventListener('click', closePopup);
 // Обработчик «отправки» формы
 function formSubmitHandler (event) {
     event.preventDefault(); 
+    if (nameInput.value !== '') {
     titleName.textContent = nameInput.value;
+    };
     titleJob.textContent = jobInput.value;
     closePopup();
 

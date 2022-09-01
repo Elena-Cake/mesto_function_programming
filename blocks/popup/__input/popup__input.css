@@ -8,3 +8,10 @@
     line-height: 17px;
     padding-bottom: 13px;
 }
+
+.popup__input:focus {
+    outline: none;
+    font-weight: 500;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
