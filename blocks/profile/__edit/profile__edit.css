@@ -4,7 +4,6 @@
     cursor: pointer;
     transition: opacity 1s ease;
     background-image: url(../../../images/profile_edit.svg);
-    background-size: contain;
     background-color: rgba(0,0,0,0);
     background-size: 24px 24px;
     background-repeat: no-repeat;
