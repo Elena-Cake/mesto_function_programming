@@ -17,56 +17,54 @@
                     <div class="profile__info">
                         <div class="profile__container">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <img class="profile__edit" src="./images/profile_edit.svg" alt="иконка редактирования профиля">
+                            <button class="profile__edit" type="button"></button>
                         </div>
                         <p class="profile__job">Исследователь океана</p>
                     </div>
                 </div>
-                <div class="profile__add">
-                    <img class="profile__plus" src="./images/profile_plus.svg" alt="иконка добавления фото">
-                </div>
+                <button class="profile__add" type="button"></button>
             </section>
-            <section class="elements">
+            <section class="elements" aria-label="photos">
                 <div class="element">
                     <img class="element__foto" src="./images/elements_karachaevsk.jpg" alt="Карачаевск">
-                    <div class="element__place">
-                        <p class="element__name">Карачаевск</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Карачаевск</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./images/elements_elbrus.jpg" alt="Гора Эльбрус">
-                    <div class="element__place">
-                        <p class="element__name">Гора Эльбрус</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Гора Эльбрус</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./images/elements_dombay.jpg" alt="Домбай">
-                    <div class="element__place">
-                        <p class="element__name">Домбай</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Домбай</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./images/elements_hallstatt.jpg" alt="Гальштат">
-                    <div class="element__place">
-                        <p class="element__name">Гальштат</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Гальштат</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./images/elements_landmannalaugar.jpg" alt="Ландманналаугар ">
-                    <div class="element__place">
-                        <p class="element__name">Ландманналаугар</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Ландманналаугар</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
                 <div class="element">
                     <img class="element__foto" src="./images/elements_nizshninovgorod.jpg" alt="Нижний Новгород">
-                    <div class="element__place">
-                        <p class="element__name">Нижний Новгород</p>
-                        <div class="element__like"></div>
+                    <div class="element__discription">
+                        <h2 class="element__name">Нижний Новгород</h2>
+                        <button class="element__like" type="submit"></button>
                     </div>
                 </div>
             </section>
@@ -76,16 +74,16 @@
         </footer>
         <div class="popup">
             <div class="popup__container">
-                    <img class="popup__close" src="./images/edit_close.svg" alt="крестик">
-                <form class="popup__form">
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <input class="popup__input popup__input-name" type="text">
-                    <input class="popup__input popup__input-job" type="text">
-                    <button class="popup__save">Сохранить</button>
+                    <button class="popup__close" type="button"></button>
+                <form class="popup__form" name="edit_perconal_info">
+                    <h3 class="popup__title">Редактировать профиль</h3>
+                    <input class="popup__input popup_type_name" type="text" name="popup_input_name" placeholder="Введите имя">
+                    <input class="popup__input popup_type_job" type="text" name="popup_input_job" placeholder="Чем вы занимаетесь?">
+                    <button class="popup__save" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="./index.js"></script>
+    <script src="./scripts/index.js" defer></script>
 </body>
 </html>

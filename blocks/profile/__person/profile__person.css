@@ -2,6 +2,7 @@
     max-width: 486px;
     width: 60%;
     display: flex;
+    gap: 30px;
     justify-content: space-between;
     align-items: center;
 }

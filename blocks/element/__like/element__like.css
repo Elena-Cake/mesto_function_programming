@@ -1,5 +1,10 @@
 .element__like {
     background-image: url(../../../images/elements_heart.svg);
+    background-size: contain;
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
     width: 22px;
     height: 19px;
     cursor: pointer;

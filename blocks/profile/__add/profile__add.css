@@ -5,6 +5,11 @@
     position: relative;
     cursor: pointer;
     transition: opacity 1s ease;
+    background-image: url(../../../images/profile_plus.svg);
+    background-repeat: no-repeat;
+    background-size: 22px 22px;
+    background-position: center;
+    background-color: rgba(0,0,0,0);
 }
 
 .profile__add:hover {
@@ -20,5 +25,6 @@
 @media screen and (max-width: 640px) {
     .profile__add {
         width: 100%;
+        background-size: 17px 17px;
     }
 }

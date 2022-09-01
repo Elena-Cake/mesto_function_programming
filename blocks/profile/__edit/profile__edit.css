@@ -1,7 +1,15 @@
 .profile__edit {
     width: 24px;
+    height: 24px;
     cursor: pointer;
     transition: opacity 1s ease;
+    background-image: url(../../../images/profile_edit.svg);
+    background-size: contain;
+    background-color: rgba(0,0,0,0);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 0;
 }
 
 .profile__edit:hover {
@@ -11,6 +19,6 @@
 @media screen and (max-width: 640px) {
     .profile__edit {
         width: 18px;
-        margin-left: 10px;
+        background-size: 18px 18px;
     }
 }
