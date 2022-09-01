@@ -42,7 +42,7 @@ function formSubmitHandler (event) {
     closePopup();
 
 }
-btnSave.addEventListener('submit', formSubmitHandler); 
+btnSave.addEventListener('click', formSubmitHandler); 
 
 // нажатие крестика
 btnClose.addEventListener('click', closePopup);
