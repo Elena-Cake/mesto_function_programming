@@ -40,9 +40,8 @@ function formSubmitHandler (event) {
     titleName.textContent = nameInput.value;
     titleJob.textContent = jobInput.value;
     closePopup();
-
-}
-btnSave.addEventListener('click', formSubmitHandler); 
+};
+btnSave.addEventListener('submit', formSubmitHandler); 
 
 // нажатие крестика
 btnClose.addEventListener('click', closePopup);
