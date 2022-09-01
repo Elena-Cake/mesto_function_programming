@@ -1,4 +1,5 @@
 .profile__edit {
+    margin: auto 0 7px;
     width: 24px;
     height: 24px;
     cursor: pointer;
@@ -9,6 +10,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border: 0;
+    grid-area: edit;
 }
 
 .profile__edit:hover {

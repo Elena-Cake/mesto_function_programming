@@ -1,14 +1,22 @@
 .profile {
     width: 100%;
     padding: 40px 0 20px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 120px auto 150px;
+    grid-template-areas: 
+    'foto info add';
     align-items: center;
+    gap: 30px;
 }
 
 @media screen and (max-width: 640px){
     .profile {
-        display: block;
+        grid-template-columns: auto;
+        grid-template-areas: 
+            'foto'
+            'info'
+            'add';
         text-align: center;
+        gap: 26px;
     }
 }

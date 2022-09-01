@@ -1,22 +1,22 @@
 .profile__container {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    justify-content: start;
     align-items: center;
+    grid-column-gap: 18px;
+    grid-row-gap: 16px;
+    grid-template-columns: auto 24px;
+    grid-template-areas: 
+    'name edit'
+    'job job';
 }
 
 @media screen and (max-width: 640px) {
     .profile__container { 
-        width: calc(100% *217/282);
-        justify-content: start;
-        margin-left: 25%;
-    }
-}
-
-@media screen and (max-width: 340px) {
-    .profile__container { 
-        width: calc(100% *217/282);
-        justify-content: start;
-        margin-left: calc(100% * 46/282);
+        width: 100%;
+        margin: 0 auto;
+        grid-template-columns: auto 18px;
+        justify-content: center;
+        grid-row-gap: 10px;
     }
 }
