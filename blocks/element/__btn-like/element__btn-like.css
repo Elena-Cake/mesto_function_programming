@@ -1,7 +1,7 @@
 .element__btn-like {
     background-image: url(../../../images/elements_heart.svg);
     background-size: contain;
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     border: 0;
