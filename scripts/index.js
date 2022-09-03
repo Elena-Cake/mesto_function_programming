@@ -15,9 +15,6 @@ const btnEdit = document.querySelector('.profile__btn-edit');
 const popup = document.querySelector('.popup');
 const btnClose = document.querySelector('.popup__btn-close');
 
-// скрываю форму при загрузке страницы
-closePopup();
-
 // добавляем попап
 function openPopup() {
      popup.classList.add('popup_opened');
@@ -29,6 +26,7 @@ function openPopup() {
 // скрываем попап
 function closePopup() {
     popup.classList.remove('popup_opened');
+    // formElement.reset();
 };
 
 // нажатие кнопки редактирования
