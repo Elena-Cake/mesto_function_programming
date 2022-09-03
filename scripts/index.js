@@ -26,7 +26,7 @@ function openPopup() {
 // скрываем попап
 function closePopup() {
     popup.classList.remove('popup_opened');
-    // formElement.reset();
+    formElement.reset();
 };
 
 // нажатие кнопки редактирования
