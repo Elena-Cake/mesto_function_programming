@@ -15,7 +15,7 @@
     .profile__container { 
         width: 100%;
         margin: 0 auto;
-        grid-template-columns: auto 18px;
+        grid-template-columns: auto 37px;
         justify-content: center;
         grid-row-gap: 10px;
     }
