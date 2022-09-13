@@ -1,0 +1,9 @@
+.elements__item {
+    width: 282px;
+}
+
+@media screen and (max-width: 1279px) {
+    .elements__item:nth-child(odd) {
+        margin:0 0 0 auto;
+    }
+}

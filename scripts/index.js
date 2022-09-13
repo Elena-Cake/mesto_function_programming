@@ -17,9 +17,6 @@ const btnClose = document.querySelector('.popup__btn-close');
 // карточки
 const cardsContainer = document.querySelector('.elements')
 
-// скрываю форму при загрузке страницы
-closePopup();
-
 // добавляем попап
 function openPopup() {
      popup.classList.add('popup_opened');
@@ -31,6 +28,7 @@ function openPopup() {
 // скрываем попап
 function closePopup() {
     popup.classList.remove('popup_opened');
+    formElement.reset();
 };
 
 // нажатие кнопки редактирования
