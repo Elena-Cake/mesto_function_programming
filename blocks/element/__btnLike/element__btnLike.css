@@ -1,4 +1,4 @@
-.element__btn-like {
+.element__btnLike {
     background-image: url(../../../images/elements_heart.svg);
     background-size: contain;
     background-color: transparent;
@@ -11,6 +11,6 @@
     transition: opacity 1s ease;
 }
 
-.element__btn-like:hover {
+.element__btnLike:hover {
     opacity: .5;
 }
