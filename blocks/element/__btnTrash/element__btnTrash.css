@@ -8,8 +8,9 @@
     height: 19px;
     background-color: transparent;
     transition: opacity 1s ease;
+    cursor: pointer;
 }
 
 .element__btnTrash:hover {
-    opacity: .3;
+    opacity: .6;
 }
