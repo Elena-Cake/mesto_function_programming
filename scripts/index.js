@@ -54,8 +54,6 @@ btnEdit.addEventListener('click', ()=>{
 } );
 
 
-
-
 // обработчик «отправки» формы
 function formSubmitHandler (event) { 
     event.preventDefault();
