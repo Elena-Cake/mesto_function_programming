@@ -6,12 +6,14 @@ const jobInput = document.querySelector('.popup__input_type_job');
 const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 // попап редактирования профиля
+const popup = document.querySelector('.popup')
 const popupEdit = document.querySelector('.popupEdit');
 const btnEdit = document.querySelector('.profile__btnEdit');
 const btnClose = document.querySelector('.popup__btnClose');
 const formElement =  document.querySelector('.popup__form');
 const btnSave = document.querySelector('.popup__btnSave');
 // попап добавления фото
+const btnAddCard = document.querySelector('.profile__btnAdd')
 const popupAddCard = document.querySelector('#popupAddCard');
 // карточки
 const cardsContainer = document.querySelector('.elements');
@@ -22,6 +24,10 @@ const page = document.querySelector('.page');
 //_____________________________
 
 // добавляем попап
+
+// function openPopup() {
+//     popup.classList.add('popup_opened');
+// };
 
 function openPopup(p) {
     p.classList.add('popup_opened');
@@ -47,17 +53,20 @@ btnEdit.addEventListener('click', ()=>{
     nameInput.focus();
 } );
 
+
+
+
 // обработчик «отправки» формы
 function formSubmitHandler (event) { 
     event.preventDefault();
     titleName.textContent = nameInput.value; 
     titleJob.textContent = jobInput.value; 
-    closePopup(popupEdit);
+    closePopup();
 } 
 formElement.addEventListener('submit', formSubmitHandler);  
 
  // нажатие крестика
-btnClose.addEventListener('click', closePopup);
+btnClose.addEventListener('click', () => openPopup(popupEdit) );
 
 //_____________________________
 //  РАБОТА С КАРТОЧКАМИ
@@ -90,3 +99,4 @@ btnClose.addEventListener('click', closePopup);
 //_____________________________
 
 
+btnAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
