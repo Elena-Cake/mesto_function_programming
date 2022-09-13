@@ -15,10 +15,10 @@
                 <img class="profile__avatar" src="./images/profile_foto.jpg" alt="аватар пользователя">
                 <div class="profile__container">
                     <h1 class="profile__name">Жак-Ив Кусто</h1>
-                    <button class="profile__btn-edit" type="button" aria-label="открыть окно редактирования профиля"></button>
+                    <button class="profile__btnEdit" type="button" aria-label="открыть окно редактирования профиля"></button>
                     <p class="profile__job">Исследователь океана</p>
                 </div>
-                <button class="profile__btn-add" type="button" aria-label="добавить место"></button>
+                <button class="profile__btnAdd" type="button" aria-label="добавить место"></button>
             </section>
             <section class="elements" aria-label="Фотографии">
                 
@@ -27,17 +27,28 @@
         <footer class="footer">
             <p class="footer__author">&#169; 2020 Mesto Russia</p>
         </footer>
-        <template class="popup">
+        <div class="popup popupAddCard" id="popupAddCard">
             <div class="popup__container">
-                    <button class="popup__btn-close" type="button" aria-label="закрыть окно редактирования профиля"></button>
+                    <button class="popup__btnClose" type="button" aria-label="закрыть окно"></button>
+                <form class="popup__form" name="editPerconalInfo">
+                    <h3 class="popup__title">Новое место</h3>
+                    <input class="popup__input popup__input_type_name" type="text" name="popup_input_name" placeholder="Название">
+                    <input class="popup__input popup__input_type_job" type="text" name="popup_input_job" placeholder="Ссылка на картинку">
+                    <button class="popup__btnSave" type="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+        <div class="popup popupEdit" id="popupEdit">
+            <div class="popup__container">
+                    <button class="popup__btnClose" type="button" aria-label="закрыть окно"></button>
                 <form class="popup__form" name="editPerconalInfo">
                     <h3 class="popup__title">Редактировать профиль</h3>
                     <input class="popup__input popup__input_type_name" type="text" name="popup_input_name" placeholder="Введите имя">
                     <input class="popup__input popup__input_type_job" type="text" name="popup_input_job" placeholder="Чем вы занимаетесь?">
-                    <button class="popup__btn-save" type="submit">Сохранить</button>
+                    <button class="popup__btnSave" type="submit">Сохранить</button>
                 </form>
             </div>
-        </template>
+        </div>
         <template class="elements__list" id="cards">
             <div class="element" id="card">
                 <img class="element__foto">
@@ -49,6 +60,34 @@
             </div>
         </template>
     </div>
+    <script>
+    // карточки по умолчанию
+        const initialCards = [
+            {
+              name: 'Архыз',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+            },
+            {
+              name: 'Челябинская область',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+            },
+            {
+              name: 'Иваново',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+            },
+            {
+              name: 'Камчатка',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+            },
+            {
+              name: 'Холмогорский район',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+            },
+            {
+              name: 'Байкал',
+              link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+            }
+          ]; </script>
     <script src="./scripts/index.js" defer></script>
 </body>
 </html>

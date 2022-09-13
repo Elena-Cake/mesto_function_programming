@@ -1,4 +1,4 @@
-.profile__btn-edit{
+.profile__btnEdit{
     margin: auto 0 7px;
     width: 24px;
     height: 24px;
@@ -13,12 +13,12 @@
     grid-area: edit;
 }
 
-.profile__btn-edit:hover {
+.profile__btnEdit:hover {
     opacity: .6;
 }
 
 @media screen and (max-width: 640px) {
-    .profile__btn-edit {
+    .profile__btnEdit {
         margin-right: 19px;
         width: 18px;
         height: 18px;
