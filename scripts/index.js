@@ -24,8 +24,8 @@ const formElementAddFoto = popupAddCard.firstElementChild.lastElementChild;
 //попап фото
 const popupFoto = document.querySelector('.popupFoto');
 
-const btnCloseFoto = popupFoto.firstElementChild.firstElementChild;
-const imgFoto = popupFoto.firstElementChild.firstElementChild.nextElementSibling;
+const imgFoto = popupFoto.firstElementChild.firstElementChild;
+const btnCloseFoto = popupFoto.firstElementChild.firstElementChild.nextElementSibling;
 const nameFoto = popupFoto.firstElementChild.lastElementChild;
 
 // карточки
@@ -124,4 +124,4 @@ function formSubmitHandlerFoto (evt) {
 formElementAddFoto.addEventListener('submit', formSubmitHandlerFoto);  
 
 // нажатие крестика
-btnCloseFoto.addEventListener('click', () => closePopup(popupAddCard) );
+btnCloseAddFoto.addEventListener('click', () => closePopup(popupAddCard) );
