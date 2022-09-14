@@ -1,0 +1,8 @@
+.popup__name {
+    grid-area: name;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 0;
+    margin: 2px 0 0 0;
+}

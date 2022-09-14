@@ -43,6 +43,11 @@
 @import url(../blocks/popup/__input/_type/popup__input_type_job.css);
 @import url(../blocks/popup/__btnSave/popup__btnSave.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__container/_place/popup__container_place_foto.css);
+@import url(../blocks/popup/__foto/popup__foto.css);
+@import url(../blocks/popup/__btnClose/_place/popup__btnClose_place_foto.css);
+@import url(../blocks/popup/__name/popup__name.css);
+
 
 /* footer */
 @import url(../blocks/footer/footer.css);

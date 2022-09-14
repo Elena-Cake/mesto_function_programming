@@ -1,0 +1,12 @@
+.popup__container_place_foto {
+    width: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0 , 75vw) 32px;
+    grid-template-rows: 32px minmax(0 , 75vh) auto;
+    gap: 8px;
+    grid-template-areas: 
+    '. close'
+    'foto .'
+    'name name';
+}
