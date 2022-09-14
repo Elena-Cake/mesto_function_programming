@@ -1,5 +1,4 @@
 .popup__container_place_foto {
-    width: auto;
     margin: auto;
     display: grid;
     grid-template-columns: minmax(0 , 75vw) 32px;

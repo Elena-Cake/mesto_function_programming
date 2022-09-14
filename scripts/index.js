@@ -1,33 +1,41 @@
 
-// находим поля формы в DOM
-const nameInput = document.querySelector('.popup__input_type_name');
-const jobInput = document.querySelector('.popup__input_type_job');
-// находим значения profile
+
+// значения profile
 const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 // попап редактирования профиля
-const popup = document.querySelector('.popup')
 const popupEdit = document.querySelector('.popupEdit');
 const btnEdit = document.querySelector('.profile__btnEdit');
-const btnClose = document.querySelector('.popup__btnClose');
-const formElement =  document.querySelector('.popup__form');
-const btnSave = document.querySelector('.popup__btnSave');
+
+const nameInput = popupEdit.firstElementChild.lastElementChild.children[1]; 
+const jobInput = popupEdit.firstElementChild.lastElementChild.children[2];
+const formElement =  popupEdit.firstElementChild.lastElementChild;
+const btnCloseEdit = popupEdit.firstElementChild.firstElementChild;
+
 // попап добавления фото
-const btnAddCard = document.querySelector('.profile__btnAdd')
-const popupAddCard = document.querySelector('#popupAddCard');
+const popupAddCard = document.querySelector('.popupAddCard');
+const btnAddCard = document.querySelector('.profile__btnAdd');
+
+const btnCloseAddFoto = popupAddCard.firstElementChild.firstElementChild;
+const nameFotoInp = popupAddCard.firstElementChild.lastElementChild.children[1]; 
+const linkFotoInp = popupAddCard.firstElementChild.lastElementChild.children[2];
+const formElementAddFoto = popupAddCard.firstElementChild.lastElementChild;
+
+//попап фото
+const popupFoto = document.querySelector('.popupFoto');
+
+const btnCloseFoto = popupFoto.firstElementChild.firstElementChild;
+const imgFoto = popupFoto.firstElementChild.firstElementChild.nextElementSibling;
+const nameFoto = popupFoto.firstElementChild.lastElementChild;
+
 // карточки
 const cardsContainer = document.querySelector('.elements');
-const page = document.querySelector('.page');
 
 //_____________________________
 //  ПОПАП
 //_____________________________
 
 // добавляем попап
-
-// function openPopup() {
-//     popup.classList.add('popup_opened');
-// };
 
 function openPopup(p) {
     p.classList.add('popup_opened');
@@ -53,21 +61,20 @@ btnEdit.addEventListener('click', ()=>{
     nameInput.focus();
 } );
 
-
-// обработчик «отправки» формы
-function formSubmitHandler (event) { 
-    event.preventDefault();
+// обработчик «отправки» формы редактирования профиля
+function formSubmitHandler (evt) { 
+    evt.preventDefault();
     titleName.textContent = nameInput.value; 
     titleJob.textContent = jobInput.value; 
-    closePopup();
+    closePopup(popupEdit);
 } 
 formElement.addEventListener('submit', formSubmitHandler);  
 
  // нажатие крестика
-btnClose.addEventListener('click', () => openPopup(popupEdit) );
+btnCloseEdit.addEventListener('click', () => closePopup(popupEdit) );
 
 //_____________________________
-//  РАБОТА С КАРТОЧКАМИ
+//  ДОБАВЛЕНИЕ КАРТОЧКИ
 //_____________________________
 
 // ф-ция добавления карточки
@@ -85,6 +92,17 @@ btnClose.addEventListener('click', () => openPopup(popupEdit) );
       });
     //   удаляем карточку
     cardElement.querySelector('.element__btnTrash').addEventListener ('click', () => cardElement.closest('.element').remove());
+    
+    
+    //открыть попап фото
+    cardFoto.addEventListener ('click', function (evt) {
+      openPopup(popupFoto);
+      imgFoto.src = link;
+      imgFoto.alt = `${name} на фотографии`;
+      nameFoto.textContent = name;
+      //закрыть попап фото
+      btnCloseFoto.addEventListener('click', () => closePopup(popupFoto) );
+    });
 
     cardsContainer.prepend(cardElement)
   }
@@ -93,8 +111,17 @@ btnClose.addEventListener('click', () => openPopup(popupEdit) );
   initialCards.forEach(item => addCard(item.name , item.link))
 
 //_____________________________
-//  ДОБАВЛЕНИЕ КАРТОЧКИ
+//  ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
 //_____________________________
-
-
 btnAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
+
+// обработчик «отправки» формы добавления фото
+function formSubmitHandlerFoto (evt) { 
+  evt.preventDefault();
+  addCard(nameFotoInp.value, linkFotoInp.value);
+  closePopup(popupAddCard);
+} 
+formElementAddFoto.addEventListener('submit', formSubmitHandlerFoto);  
+
+// нажатие крестика
+btnCloseFoto.addEventListener('click', () => closePopup(popupAddCard) );
