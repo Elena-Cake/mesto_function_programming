@@ -4,6 +4,7 @@
     overflow: hidden;
     color: #000;
     position: relative;
+    height: 361px;
 }
 
 @media screen and (max-width: 1279px) {

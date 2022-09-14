@@ -3,13 +3,14 @@
 // значения profile
 const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
+
 // попап редактирования профиля
 const popupEdit = document.querySelector('.popupEdit');
 const btnEdit = document.querySelector('.profile__btnEdit');
 
-const nameInput = popupEdit.firstElementChild.lastElementChild.children[1]; 
-const jobInput = popupEdit.firstElementChild.lastElementChild.children[2];
-const formElement =  popupEdit.firstElementChild.lastElementChild;
+const nameInp = popupEdit.firstElementChild.lastElementChild.children[1]; 
+const jobInp = popupEdit.firstElementChild.lastElementChild.children[2];
+const formElementEdit =  popupEdit.firstElementChild.lastElementChild;
 const btnCloseEdit = popupEdit.firstElementChild.firstElementChild;
 
 // попап добавления фото
@@ -21,7 +22,7 @@ const nameFotoInp = popupAddCard.firstElementChild.lastElementChild.children[1];
 const linkFotoInp = popupAddCard.firstElementChild.lastElementChild.children[2];
 const formElementAddFoto = popupAddCard.firstElementChild.lastElementChild;
 
-//попап фото
+//попап просмотра фото
 const popupFoto = document.querySelector('.popupFoto');
 
 const imgFoto = popupFoto.firstElementChild.firstElementChild;
@@ -36,16 +37,13 @@ const cardsContainer = document.querySelector('.elements');
 //_____________________________
 
 // добавляем попап
-
 function openPopup(p) {
     p.classList.add('popup_opened');
 };
 
 // скрываем попап
-
 function closePopup(p) {
     p.classList.remove('popup_opened');
-    formElement.reset();
 };
 
 //_____________________________
@@ -56,22 +54,25 @@ function closePopup(p) {
 btnEdit.addEventListener('click', ()=>{
     openPopup(popupEdit);
     //присвоим значения title инпутам
-    nameInput.value = titleName.textContent;
-    jobInput.value = titleJob.textContent;
-    nameInput.focus();
+    nameInp.value = titleName.textContent;
+    jobInp.value = titleJob.textContent;
+    nameInp.focus();
 } );
 
 // обработчик «отправки» формы редактирования профиля
 function formSubmitHandler (evt) { 
     evt.preventDefault();
-    titleName.textContent = nameInput.value; 
-    titleJob.textContent = jobInput.value; 
+    titleName.textContent = nameInp.value; 
+    titleJob.textContent = jobInp.value; 
     closePopup(popupEdit);
 } 
-formElement.addEventListener('submit', formSubmitHandler);  
+formElementEdit.addEventListener('submit', formSubmitHandler);  
 
- // нажатие крестика
-btnCloseEdit.addEventListener('click', () => closePopup(popupEdit) );
+// нажатие крестика
+btnCloseEdit.addEventListener('click', () => {
+  closePopup(popupEdit); 
+  formElementEdit.reset()
+});
 
 //_____________________________
 //  ДОБАВЛЕНИЕ КАРТОЧКИ
@@ -92,8 +93,7 @@ btnCloseEdit.addEventListener('click', () => closePopup(popupEdit) );
       });
     //   удаляем карточку
     cardElement.querySelector('.element__btnTrash').addEventListener ('click', () => cardElement.closest('.element').remove());
-    
-    
+        
     //открыть попап фото
     cardFoto.addEventListener ('click', function (evt) {
       openPopup(popupFoto);
@@ -101,7 +101,7 @@ btnCloseEdit.addEventListener('click', () => closePopup(popupEdit) );
       imgFoto.alt = `${name} на фотографии`;
       nameFoto.textContent = name;
       //закрыть попап фото
-      btnCloseFoto.addEventListener('click', () => closePopup(popupFoto) );
+      btnCloseFoto.addEventListener('click', () => closePopup(popupFoto));
     });
 
     cardsContainer.prepend(cardElement)
@@ -113,6 +113,7 @@ btnCloseEdit.addEventListener('click', () => closePopup(popupEdit) );
 //_____________________________
 //  ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
 //_____________________________
+
 btnAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 
 // обработчик «отправки» формы добавления фото
@@ -124,4 +125,7 @@ function formSubmitHandlerFoto (evt) {
 formElementAddFoto.addEventListener('submit', formSubmitHandlerFoto);  
 
 // нажатие крестика
-btnCloseAddFoto.addEventListener('click', () => closePopup(popupAddCard) );
+btnCloseAddFoto.addEventListener('click', () => {
+  closePopup(popupAddCard); 
+  formElementAddFoto.reset();
+});
