@@ -95,7 +95,7 @@ btnCloseEdit.addEventListener('click', () => {
     cardElement.querySelector('.element__btnTrash').addEventListener ('click', () => cardElement.closest('.element').remove());
         
     //открыть попап фото
-    cardFoto.addEventListener ('click', function (evt) {
+    cardFoto.addEventListener ('click', function () {
       openPopup(popupFoto);
       imgFoto.src = link;
       imgFoto.alt = `${name} на фотографии`;
