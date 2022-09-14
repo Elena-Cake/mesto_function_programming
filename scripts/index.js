@@ -60,13 +60,13 @@ btnEdit.addEventListener('click', ()=>{
 } );
 
 // обработчик «отправки» формы редактирования профиля
-function formSubmitHandler (evt) { 
+function submitHandler (evt) { 
     evt.preventDefault();
     titleName.textContent = nameInp.value; 
     titleJob.textContent = jobInp.value; 
     closePopup(popupEdit);
 } 
-formElementEdit.addEventListener('submit', formSubmitHandler);  
+formElementEdit.addEventListener('submit', submitHandler);  
 
 // нажатие крестика
 btnCloseEdit.addEventListener('click', () => {
@@ -80,7 +80,7 @@ btnCloseEdit.addEventListener('click', () => {
 
 // ф-ция добавления карточки
   function addCard(name, link) {
-    const cardsTemplate = document.querySelector('#cards').content;
+    const cardsTemplate = document.querySelector('.elements__list').content;
     const cardElement = cardsTemplate.querySelector('.element').cloneNode(true);
     const cardFoto =  cardElement.querySelector('.element__foto');
   
@@ -107,7 +107,7 @@ btnCloseEdit.addEventListener('click', () => {
     cardsContainer.prepend(cardElement)
   }
 
-// добавляю массив фоток
+// добавляю массив фотографий
   initialCards.forEach(item => addCard(item.name , item.link))
 
 //_____________________________
@@ -117,12 +117,13 @@ btnCloseEdit.addEventListener('click', () => {
 btnAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 
 // обработчик «отправки» формы добавления фото
-function formSubmitHandlerFoto (evt) { 
+function submitHandlerFoto (evt) { 
   evt.preventDefault();
   addCard(nameFotoInp.value, linkFotoInp.value);
+  formElementAddFoto.reset();
   closePopup(popupAddCard);
 } 
-formElementAddFoto.addEventListener('submit', formSubmitHandlerFoto);  
+formElementAddFoto.addEventListener('submit', submitHandlerFoto);  
 
 // нажатие крестика
 btnCloseAddFoto.addEventListener('click', () => {
