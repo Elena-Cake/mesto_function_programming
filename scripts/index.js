@@ -6,27 +6,27 @@ const titleJob = document.querySelector('.profile__job');
 
 // попап редактирования профиля
 const popupEdit = document.querySelector('.popup-edit');
-const btnEdit = document.querySelector('.profile__btn-edit');
+const buttonEdit = document.querySelector('.profile__btn-edit');
 
-const nameInp = popupEdit.querySelector('.popup__input_type_name');
-const jobInp = popupEdit.querySelector('.popup__input_type_job');
+const nameInput = popupEdit.querySelector('.popup__input_type_name');
+const jobInput = popupEdit.querySelector('.popup__input_type_job');
 const formElementEdit =  popupEdit.querySelector('.popup__form');
-const btnCloseEdit = popupEdit.querySelector('.popup__btn-close');
+const buttonCloseEdit = popupEdit.querySelector('.popup__btn-close');
 
 // попап добавления фото
 const popupAddCard = document.querySelector('.popup-add-card');
-const btnAddCard = document.querySelector('.profile__btn-add');
+const buttonAddCard = document.querySelector('.profile__btn-add');
 
-const btnCloseAddFoto = popupAddCard.querySelector('.popup__btn-close');
-const nameFotoInp = popupAddCard.querySelector('.popup__input_type_name');
-const linkFotoInp = popupAddCard.querySelector('.popup__input_type_job');
+const buttonCloseAddFoto = popupAddCard.querySelector('.popup__btn-close');
+const nameFotoInput = popupAddCard.querySelector('.popup__input_type_name');
+const linkFotoInput = popupAddCard.querySelector('.popup__input_type_job');
 const formElementAddFoto = popupAddCard.querySelector('.popup__form');
 
 //попап просмотра фото
 const popupFoto = document.querySelector('.popup-foto');
 
 const imgFoto = popupFoto.querySelector('.popup__foto');
-const btnCloseFoto = popupFoto.querySelector('.popup__btn-close');
+const buttonCloseFoto = popupFoto.querySelector('.popup__btn-close');
 const nameFoto = popupFoto.querySelector('.popup__name');
 
 // карточки
@@ -51,25 +51,25 @@ function closePopup(p) {
 //_____________________________
 
 // нажатие кнопки редактирования
-btnEdit.addEventListener('click', ()=>{
+buttonEdit.addEventListener('click', ()=>{
     openPopup(popupEdit);
     //присвоим значения title инпутам
-    nameInp.value = titleName.textContent;
-    jobInp.value = titleJob.textContent;
-    nameInp.focus();
+    nameInput.value = titleName.textContent;
+    jobInput.value = titleJob.textContent;
+    nameInput.focus();
 } );
 
 // обработчик «отправки» формы редактирования профиля
 function submitHandler (evt) { 
     evt.preventDefault();
-    titleName.textContent = nameInp.value; 
-    titleJob.textContent = jobInp.value; 
+    titleName.textContent = nameInput.value; 
+    titleJob.textContent = jobInput.value; 
     closePopup(popupEdit);
 } 
 formElementEdit.addEventListener('submit', submitHandler);  
 
 // нажатие крестика
-btnCloseEdit.addEventListener('click', () => {
+buttonCloseEdit.addEventListener('click', () => {
   closePopup(popupEdit); 
   formElementEdit.reset()
 });
@@ -107,7 +107,7 @@ btnCloseEdit.addEventListener('click', () => {
   }
 
 //закрыть попап фото
-btnCloseFoto.addEventListener('click', () => closePopup(popupFoto)); 
+buttonCloseFoto.addEventListener('click', () => closePopup(popupFoto)); 
 
 // добавляю массив фотографий
   initialCards.forEach(item => addCard(item.name , item.link))
@@ -121,19 +121,19 @@ function addElementInContainer(element,container) {
 //  ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
 //_____________________________
 
-btnAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
+buttonAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 
 // обработчик «отправки» формы добавления фото
 function submitHandlerFoto (evt) { 
   evt.preventDefault();
-  addCard(nameFotoInp.value, linkFotoInp.value);
+  addCard(nameFotoInput.value, linkFotoInput.value);
   formElementAddFoto.reset();
   closePopup(popupAddCard);
 } 
 formElementAddFoto.addEventListener('submit', submitHandlerFoto);  
 
 // нажатие крестика
-btnCloseAddFoto.addEventListener('click', () => {
+buttonCloseAddFoto.addEventListener('click', () => {
   closePopup(popupAddCard); 
   formElementAddFoto.reset();
 });
