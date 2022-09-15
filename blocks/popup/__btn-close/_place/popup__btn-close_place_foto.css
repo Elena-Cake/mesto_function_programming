@@ -1,11 +1,11 @@
-.popup__btnClose_place_foto {
+.popup__btn-close_place_foto {
     position: absolute;
     right: -40px;
     top: -40px;
 }
 
 @media screen and (max-width: 640px) {
-    .popup__btnClose_place_foto {
+    .popup__btn-close_place_foto {
         right: 0;
     }
 }

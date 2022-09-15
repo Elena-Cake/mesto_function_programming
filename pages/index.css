@@ -15,9 +15,9 @@
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__container/profile__container.css);
 @import url(../blocks/profile/__name/profile__name.css);
-@import url(../blocks/profile/__btnEdit/profile__btnEdit.css);
+@import url(../blocks/profile/__btn-edit/profile__btn-edit.css);
 @import url(../blocks/profile/__job/profile__job.css);
-@import url(../blocks/profile/__btnAdd/profile__btnAdd.css);
+@import url(../blocks/profile/__btn-add/profile__btn-add.css);
 
 /* elements */
 @import url(../blocks/elements/elements.css);
@@ -29,23 +29,23 @@
 @import url(../blocks/element/__foto/element__foto.css);
 @import url(../blocks/element/__discription/element__discription.css);
 @import url(../blocks/element/__name/element__name.css);
-@import url(../blocks/element/__btnLike/element__btnLike.css);
-@import url(../blocks/element/__btnLike/_active/element__btnLike_active.css);
-@import url(../blocks/element/__btnTrash/element__btnTrash.css);
+@import url(../blocks/element/__btn-like/element__btn-like.css);
+@import url(../blocks/element/__btn-like/_active/element__btn-like_active.css);
+@import url(../blocks/element/__btn-trash/element__btn-trash.css);
 
 /* popup */
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__btnClose/popup__btnClose.css);
+@import url(../blocks/popup/__btn-close/popup__btn-close.css);
 @import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_job.css);
-@import url(../blocks/popup/__btnSave/popup__btnSave.css);
+@import url(../blocks/popup/__btn-save/popup__btn-save.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/_place/popup__container_place_foto.css);
 @import url(../blocks/popup/__foto/popup__foto.css);
-@import url(../blocks/popup/__btnClose/_place/popup__btnClose_place_foto.css);
+@import url(../blocks/popup/__btn-close/_place/popup__btn-close_place_foto.css);
 @import url(../blocks/popup/__name/popup__name.css);
 
 
