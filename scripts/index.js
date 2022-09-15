@@ -1,5 +1,4 @@
 
-
 // значения profile
 const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
