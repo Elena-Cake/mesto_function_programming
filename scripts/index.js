@@ -5,29 +5,29 @@ const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 
 // попап редактирования профиля
-const popupEdit = document.querySelector('.popupEdit');
-const btnEdit = document.querySelector('.profile__btnEdit');
+const popupEdit = document.querySelector('.popup-edit');
+const btnEdit = document.querySelector('.profile__btn-edit');
 
-const nameInp = popupEdit.firstElementChild.lastElementChild.children[1]; 
-const jobInp = popupEdit.firstElementChild.lastElementChild.children[2];
-const formElementEdit =  popupEdit.firstElementChild.lastElementChild;
-const btnCloseEdit = popupEdit.firstElementChild.firstElementChild;
+const nameInp = popupEdit.querySelector('.popup__input_type_name');
+const jobInp = popupEdit.querySelector('.popup__input_type_job');
+const formElementEdit =  popupEdit.querySelector('.popup__form');
+const btnCloseEdit = popupEdit.querySelector('.popup__btn-close');
 
 // попап добавления фото
-const popupAddCard = document.querySelector('.popupAddCard');
-const btnAddCard = document.querySelector('.profile__btnAdd');
+const popupAddCard = document.querySelector('.popup-add-card');
+const btnAddCard = document.querySelector('.profile__btn-add');
 
-const btnCloseAddFoto = popupAddCard.firstElementChild.firstElementChild;
-const nameFotoInp = popupAddCard.firstElementChild.lastElementChild.children[1]; 
-const linkFotoInp = popupAddCard.firstElementChild.lastElementChild.children[2];
-const formElementAddFoto = popupAddCard.firstElementChild.lastElementChild;
+const btnCloseAddFoto = popupAddCard.querySelector('.popup__btn-close');
+const nameFotoInp = popupAddCard.querySelector('.popup__input_type_name');
+const linkFotoInp = popupAddCard.querySelector('.popup__input_type_job');
+const formElementAddFoto = popupAddCard.querySelector('.popup__form');
 
 //попап просмотра фото
-const popupFoto = document.querySelector('.popupFoto');
+const popupFoto = document.querySelector('.popup-foto');
 
-const imgFoto = popupFoto.firstElementChild.firstElementChild;
-const btnCloseFoto = popupFoto.firstElementChild.firstElementChild.nextElementSibling;
-const nameFoto = popupFoto.firstElementChild.lastElementChild;
+const imgFoto = popupFoto.querySelector('.popup__foto');
+const btnCloseFoto = popupFoto.querySelector('.popup__btn-close');
+const nameFoto = popupFoto.querySelector('.popup__name');
 
 // карточки
 const cardsContainer = document.querySelector('.elements');
@@ -88,11 +88,11 @@ btnCloseEdit.addEventListener('click', () => {
     cardFoto.src = link;
     cardFoto.alt = `${name} на фотографии`;
     // лайк
-    cardElement.querySelector('.element__btnLike').addEventListener ('click', function (evt) {
-        evt.target.classList.toggle('element__btnLike_active')
+    cardElement.querySelector('.element__btn-like').addEventListener ('click', function (evt) {
+        evt.target.classList.toggle('element__btn-like_active')
       });
     //   удаляем карточку
-    cardElement.querySelector('.element__btnTrash').addEventListener ('click', () => cardElement.closest('.element').remove());
+    cardElement.querySelector('.element__btn-trash').addEventListener ('click', () => cardElement.closest('.element').remove());
         
     //открыть попап фото
     cardFoto.addEventListener ('click', function () {

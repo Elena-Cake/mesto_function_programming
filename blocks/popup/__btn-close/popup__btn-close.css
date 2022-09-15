@@ -1,5 +1,7 @@
 .popup__btn-close {
-    grid-area: close;
+    position: absolute;
+    right: -40px;
+    top: -40px;
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -16,7 +18,6 @@
 
 @media screen and (max-width: 640px) {
     .popup__btn-close {
-        width: 20px;
-        height: 20px;
+        right: 0;
     }
 }
