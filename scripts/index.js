@@ -100,15 +100,22 @@ btnCloseEdit.addEventListener('click', () => {
       imgFoto.src = link;
       imgFoto.alt = `${name} на фотографии`;
       nameFoto.textContent = name;
-      //закрыть попап фото
-      btnCloseFoto.addEventListener('click', () => closePopup(popupFoto));
+      
     });
 
-    cardsContainer.prepend(cardElement)
+    addElementInContainer(cardElement,cardsContainer);
   }
+
+//закрыть попап фото
+btnCloseFoto.addEventListener('click', () => closePopup(popupFoto)); 
 
 // добавляю массив фотографий
   initialCards.forEach(item => addCard(item.name , item.link))
+
+//добавление кода в html элемент
+function addElementInContainer(element,container) { 
+  container.prepend(element)
+} 
 
 //_____________________________
 //  ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
