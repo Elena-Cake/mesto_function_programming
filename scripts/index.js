@@ -90,22 +90,24 @@ buttonCloseEdit.addEventListener('click', () => {
     cardElement.querySelector('.element__btn-like').addEventListener ('click', function (evt) {
         evt.target.classList.toggle('element__btn-like_active')
       });
-    //   удаляем карточку
+    // удаляем карточку
     cardElement.querySelector('.element__btn-trash').addEventListener ('click', () => cardElement.closest('.element').remove());
         
-    //открыть попап фото
-    cardFoto.addEventListener ('click', function () {
-      openPopup(popupFoto);
-      imgFoto.src = link;
-      imgFoto.alt = `${name} на фотографии`;
-      nameFoto.textContent = name;
-      
-    });
-    return cardElement;
+    // открыть попап фото
+    cardFoto.addEventListener ('click', ()=> openFoto (name, link));
     
+    return cardElement;
   }
 
-//закрыть попап фото
+ // открыть попап фото  
+ function openFoto (name, link) {
+    openPopup(popupFoto);
+    imgFoto.src = link;
+    imgFoto.alt = `${name} на фотографии`;
+    nameFoto.textContent = name;
+ }
+
+// закрыть попап фото
 buttonCloseFoto.addEventListener('click', () => {
   closePopup(popupFoto);
   imgFoto.src = '';
