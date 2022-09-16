@@ -112,7 +112,10 @@ buttonCloseFoto.addEventListener('click', () => {
 }); 
 
 // добавляю массив фотографий
-  initialCards.forEach(item => addElementInContainer(createCard(item.name , item.link),cardsContainer))
+  initialCards.forEach(item => {
+    const card = createCard(item.name , item.link);
+    addElementInContainer(card ,cardsContainer)
+  });
 
 //добавление кода в html элемент
 function addElementInContainer(element,container) { 
@@ -129,7 +132,9 @@ buttonAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 function submitHandlerFoto (evt) { 
   evt.preventDefault();
   //создание и добавление корточки
-  addElementInContainer(createCard(nameFotoInput.value, linkFotoInput.value),cardsContainer);
+  card = createCard(nameFotoInput.value, linkFotoInput.value);
+  addElementInContainer(card, cardsContainer);
+
   formElementAddFoto.reset();
   closePopup(popupAddCard);
 } 
