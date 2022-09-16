@@ -35,12 +35,12 @@ const cardsContainer = document.querySelector('.elements');
 //  ПОПАП
 //_____________________________
 
-// добавляем попап
+// показать попап
 function openPopup(p) {
     p.classList.add('popup_opened');
 };
 
-// скрываем попап
+// скрыть попап
 function closePopup(p) {
     p.classList.remove('popup_opened');
 };
@@ -52,7 +52,7 @@ function closePopup(p) {
 // нажатие кнопки редактирования
 buttonEdit.addEventListener('click', ()=>{
     openPopup(popupEdit);
-    //присвоим значения title инпутам
+    //присвоение значения title инпутам
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
     nameInput.focus();
@@ -67,7 +67,7 @@ function submitHandler (evt) {
 } 
 formElementEdit.addEventListener('submit', submitHandler);  
 
-// нажатие крестика
+// закрытие попапа редактирования
 buttonCloseEdit.addEventListener('click', () => {
   closePopup(popupEdit); 
   formElementEdit.reset()
@@ -86,20 +86,20 @@ buttonCloseEdit.addEventListener('click', () => {
     cardElement.querySelector('.element__name').textContent = name;
     cardFoto.src = link;
     cardFoto.alt = `${name} на фотографии`;
-    // лайк
+    // нажатие лайка
     cardElement.querySelector('.element__btn-like').addEventListener ('click', function (evt) {
         evt.target.classList.toggle('element__btn-like_active')
       });
-    // удаляем карточку
+    // удаление карточки
     cardElement.querySelector('.element__btn-trash').addEventListener ('click', () => cardElement.closest('.element').remove());
         
-    // открыть попап фото
+    // открытие попапа фото
     cardFoto.addEventListener ('click', ()=> openFoto (name, link));
     
     return cardElement;
   }
 
- // открыть попап фото  
+ // открытие попапа фото  
  function openFoto (name, link) {
     openPopup(popupFoto);
     imgFoto.src = link;
@@ -107,19 +107,19 @@ buttonCloseEdit.addEventListener('click', () => {
     nameFoto.textContent = name;
  }
 
-// закрыть попап фото
+// закрытие попапа фото
 buttonCloseFoto.addEventListener('click', () => {
   closePopup(popupFoto);
   imgFoto.src = '';
 }); 
 
-// добавляю массив фотографий
+// добавление массив фотографий
   initialCards.forEach(item => {
     const card = createCard(item.name , item.link);
     addElementInContainer(card ,cardsContainer)
   });
 
-//добавление кода в html элемент
+// добавление кода в html элемент
 function addElementInContainer(element,container) { 
   container.prepend(element);
 } 
@@ -142,7 +142,7 @@ function submitHandlerFoto (evt) {
 } 
 formElementAddFoto.addEventListener('submit', submitHandlerFoto);  
 
-// нажатие крестика
+// закрытие попапа
 buttonCloseAddFoto.addEventListener('click', () => {
   closePopup(popupAddCard); 
   formElementAddFoto.reset();
