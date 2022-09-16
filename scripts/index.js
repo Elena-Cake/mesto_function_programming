@@ -21,7 +21,7 @@ const nameFotoInput = popupAddCard.querySelector('.popup__input_type_name');
 const linkFotoInput = popupAddCard.querySelector('.popup__input_type_job');
 const formElementAddFoto = popupAddCard.querySelector('.popup__form');
 
-//попап просмотра фото
+// попап просмотра фото
 const popupFoto = document.querySelector('.popup-foto');
 
 const imgFoto = popupFoto.querySelector('.popup__foto');
@@ -52,7 +52,7 @@ function closePopup(p) {
 // нажатие кнопки редактирования
 buttonEdit.addEventListener('click', ()=>{
     openPopup(popupEdit);
-    //присвоение значения title инпутам
+    // присвоение значения title инпутам
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
     nameInput.focus();
@@ -133,7 +133,7 @@ buttonAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 // обработчик «отправки» формы добавления фото
 function submitHandlerFoto (evt) { 
   evt.preventDefault();
-  //создание и добавление корточки
+  // создание и добавление корточки
   card = createCard(nameFotoInput.value, linkFotoInput.value);
   addElementInContainer(card, cardsContainer);
 
