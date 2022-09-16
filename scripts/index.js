@@ -78,7 +78,7 @@ buttonCloseEdit.addEventListener('click', () => {
 //_____________________________
 
 // ф-ция добавления карточки
-  function addCard(name, link) {
+  function createCard(name, link) {
     const cardsTemplate = document.querySelector('.elements__list').content;
     const cardElement = cardsTemplate.querySelector('.element').cloneNode(true);
     const cardFoto =  cardElement.querySelector('.element__foto');
@@ -101,19 +101,22 @@ buttonCloseEdit.addEventListener('click', () => {
       nameFoto.textContent = name;
       
     });
-
-    addElementInContainer(cardElement,cardsContainer);
+    return cardElement;
+    
   }
 
 //закрыть попап фото
-buttonCloseFoto.addEventListener('click', () => closePopup(popupFoto)); 
+buttonCloseFoto.addEventListener('click', () => {
+  closePopup(popupFoto);
+  imgFoto.src = '';
+}); 
 
 // добавляю массив фотографий
-  initialCards.forEach(item => addCard(item.name , item.link))
+  initialCards.forEach(item => addElementInContainer(createCard(item.name , item.link),cardsContainer))
 
 //добавление кода в html элемент
 function addElementInContainer(element,container) { 
-  container.prepend(element)
+  container.prepend(element);
 } 
 
 //_____________________________
@@ -125,7 +128,8 @@ buttonAddCard.addEventListener('click', ()=>openPopup(popupAddCard) )
 // обработчик «отправки» формы добавления фото
 function submitHandlerFoto (evt) { 
   evt.preventDefault();
-  addCard(nameFotoInput.value, linkFotoInput.value);
+  //создание и добавление корточки
+  addElementInContainer(createCard(nameFotoInput.value, linkFotoInput.value),cardsContainer);
   formElementAddFoto.reset();
   closePopup(popupAddCard);
 } 
