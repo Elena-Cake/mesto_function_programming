@@ -4,6 +4,7 @@ const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 
 // попап редактирования профиля
+const popup = document.querySelector('.popup');
 const popupEdit = document.querySelector('.popup-edit');
 const buttonEdit = document.querySelector('.profile__btn-edit');
 
@@ -37,7 +38,15 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
-
+    p.querySelector('.popup__input_type_name').focus(); //why not 
+    p.addEventListener('click', (evt)=> {
+      if (evt.target.classList.contains('popup')){
+        closePopup(p);
+      }
+      document.addEventListener('keydown', (evt)=> {console.log(evt);
+        if(evt.key === 'Escape') { closePopup(p)};
+      });
+    });
     p.classList.add('popup_opened');
 };
 
@@ -45,6 +54,7 @@ function openPopup(p) {
 function closePopup(p) {
     p.classList.remove('popup_opened');
 };
+
 
 //_____________________________
 //  РЕДАКТИРОВАНИЕ ПРОФИЛЯ
@@ -56,7 +66,6 @@ buttonEdit.addEventListener('click', ()=>{
     // присвоение значения title инпутам
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
-    nameInput.focus();
 } );
 
 // обработчик «отправки» формы редактирования профиля
