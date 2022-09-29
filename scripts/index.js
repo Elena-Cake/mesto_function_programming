@@ -37,6 +37,7 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
+
     p.classList.add('popup_opened');
 };
 
@@ -194,7 +195,8 @@ const enableValidation = () => {
       evt.preventDefault();
     });
     
-    const fieldsetList = Array.from(formElement.querySelectorAll('.popup'));
+    const fieldsetList = Array.from(formElement.querySelectorAll('.popup__set'));
+    
     fieldsetList.forEach((fieldSet) => {
       setEventListeners(fieldSet);
     }); 
