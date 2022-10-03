@@ -6,11 +6,10 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
+    padding-bottom: 10px;
 }
 
 .popup__input:focus {
-    outline: none;
     font-weight: 500;
-    font-size: 14px;
-    padding-bottom: 10px;
+    outline: none;
 }
