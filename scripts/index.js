@@ -4,7 +4,6 @@ const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 
 // попап редактирования профиля
-const popup = document.querySelector('.popup');
 const popupEdit = document.querySelector('.popup-edit');
 const buttonEdit = document.querySelector('.profile__btn-edit');
 
@@ -38,6 +37,7 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
+<<<<<<< HEAD
   // if (p.querySelector('.popup__input_type_name')){
   //   p.querySelector('.popup__input_type_name').focus();} //why not 
     p.addEventListener('click', (evt)=> {
@@ -50,6 +50,9 @@ function openPopup(p) {
         if(evt.key === 'Escape') { closePopup(p)};
       });
     });
+=======
+
+>>>>>>> parent of 5ca05d4 (fear: эскейп)
     p.classList.add('popup_opened');
     
 };
@@ -63,7 +66,6 @@ function closePopup(p) {
     }
 };
 
-
 //_____________________________
 //  РЕДАКТИРОВАНИЕ ПРОФИЛЯ
 //_____________________________
@@ -74,6 +76,7 @@ buttonEdit.addEventListener('click', ()=>{
     // присвоение значения title инпутам
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
+    nameInput.focus();
 } );
 
 // обработчик «отправки» формы редактирования профиля
