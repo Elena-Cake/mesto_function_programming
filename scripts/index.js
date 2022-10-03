@@ -38,6 +38,7 @@ const cardsContainer = document.querySelector('.elements');
 // показать попап
 function openPopup(p) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   // if (p.querySelector('.popup__input_type_name')){
   //   p.querySelector('.popup__input_type_name').focus();} //why not 
     p.addEventListener('click', (evt)=> {
@@ -50,6 +51,9 @@ function openPopup(p) {
         if(evt.key === 'Escape') { closePopup(p)};
       });
     });
+=======
+
+>>>>>>> parent of 5ca05d4 (fear: эскейп)
 =======
 
 >>>>>>> parent of 5ca05d4 (fear: эскейп)
