@@ -232,3 +232,4 @@ function toggleButtonState (inputList, buttonElement) {
     buttonElement.classList.remove('btn-save_inactive')
   }
 }
+

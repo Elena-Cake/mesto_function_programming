@@ -4,15 +4,15 @@
 // span ошибки
 const showInputError = (formElement, inputElement, errorMessage) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add(inputErrorClass);
+    inputElement.classList.add(validationObject.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(errorClass);
+    errorElement.classList.add(validationObject.errorClass);
   };
   
   const hideInputError = (formElement, inputElement) => {
     const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove(inputErrorClass);
-    errorElement.classList.remove(errorClass);
+    inputElement.classList.remove(validationObject.inputErrorClass);
+    errorElement.classList.remove(validationObject.errorClass);
     errorElement.textContent = '';
   };
   
@@ -26,8 +26,8 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   };
   
   const setEventListeners = (formElement) => {
-    const inputList = Array.from(formElement.querySelectorAll(inputSelector));
-    const buttonElement = formElement.querySelector(submitButtonSelector);
+    const inputList = Array.from(formElement.querySelectorAll(validationObject.inputSelector));
+    const buttonElement = formElement.querySelector(validationObject.submitButtonSelector);
     toggleButtonState(inputList,buttonElement);
     inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', function () {
@@ -38,13 +38,13 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   };
   
   const enableValidation = () => {
-    const formList = Array.from(document.querySelectorAll(formSelector));
+    const formList = Array.from(document.querySelectorAll(validationObject.formSelector));
     formList.forEach((formElement) => {
       formElement.addEventListener('submit', function (evt) {
         evt.preventDefault();
       });
       
-      const fieldsetList = Array.from(formElement.querySelectorAll(fieldSet));
+      const fieldsetList = Array.from(formElement.querySelectorAll(validationObject.fieldSet));
       
       fieldsetList.forEach((fieldSet) => {
         setEventListeners(fieldSet);
@@ -60,10 +60,20 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   
   function toggleButtonState (inputList, buttonElement) {
     if (hasInvalidInput(inputList)){
-      buttonElement.classList.add(inactiveButtonClass)
+      buttonElement.classList.add(validationObject.inactiveButtonClass)
     } else {
-      buttonElement.classList.remove(inactiveButtonClass)
+      buttonElement.classList.remove(validationObject.inactiveButtonClass)
     }
   }
 
-  enableValidation();
+  const validationObject = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__btn-save',
+    inactiveButtonClass: 'btn-save_inactive',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__input-error_active',
+    fieldSet:'.popup__set'
+  }
+
+  enableValidation(validationObject);
