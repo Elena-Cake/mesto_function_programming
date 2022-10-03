@@ -38,21 +38,29 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
-    p.querySelector('.popup__input_type_name').focus(); //why not 
+  // if (p.querySelector('.popup__input_type_name')){
+  //   p.querySelector('.popup__input_type_name').focus();} //why not 
     p.addEventListener('click', (evt)=> {
+      // закрытие по нажатию оверлея
       if (evt.target.classList.contains('popup')){
         closePopup(p);
       }
-      document.addEventListener('keydown', (evt)=> {console.log(evt);
+      // закрытие по нажатию Escape
+      document.addEventListener('keydown', (evt)=> {
         if(evt.key === 'Escape') { closePopup(p)};
       });
     });
     p.classList.add('popup_opened');
+    
 };
 
 // скрыть попап
 function closePopup(p) {
     p.classList.remove('popup_opened');
+    // сброс формы
+    if (p.querySelector('.popup__form')) {
+      p.querySelector('.popup__form').reset()
+    }
 };
 
 
@@ -120,7 +128,7 @@ buttonCloseEdit.addEventListener('click', () => {
 // закрытие попапа фото
 buttonCloseFoto.addEventListener('click', () => {
   closePopup(popupFoto);
-  imgFoto.src = '';
+  formElementAddFoto.reset();
 }); 
 
 // добавление массив фотографий
@@ -156,7 +164,7 @@ formElementAddFoto.addEventListener('submit', submitHandlerFoto);
 buttonCloseAddFoto.addEventListener('click', () => {
   closePopup(popupAddCard); 
   formElementAddFoto.reset();
-});
+}); 
 
 //_____________________________
 //  ВАЛИДАЦИЯ
@@ -226,3 +234,12 @@ function toggleButtonState (inputList, buttonElement) {
     buttonElement.classList.remove('btn-save_inactive')
   }
 }
+
+// enableValidation({
+//   formSelector: '.popup__form',
+//   inputSelector: '.popup__input',
+//   submitButtonSelector: '.popup__btn-save',
+//   inactiveButtonClass: 'btn-save_inactive',
+//   inputErrorClass: 'popup__input_type_error',
+//   errorClass: 'popup__input-error_active'
+// }); 
