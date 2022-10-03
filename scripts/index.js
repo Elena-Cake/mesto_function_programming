@@ -42,7 +42,7 @@ function openPopup(p) {
         closePopup(p);
       }
       document.addEventListener('keydown', (evt)=> {
-        if(evt.key === 'Escape') { closePopup(p)};
+        if(evt.key === 'Escape') {closePopup(p)};
       });
     });
     p.classList.add('popup_opened');
@@ -60,9 +60,9 @@ function closePopup(p) {
       p.querySelectorAll('.popup__input').forEach(inputElement =>{
         inputElement.classList.remove('popup__input_type_error');
       })
-      
-      p.classList.remove('popup_opened');
-    }
+    }  
+    p.classList.remove('popup_opened');
+    
 };
 
 //_____________________________
