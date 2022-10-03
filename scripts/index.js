@@ -37,22 +37,35 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
-    p.querySelector('.popup__input_type_name').focus(); //why not 
     p.addEventListener('click', (evt)=> {
       if (evt.target.classList.contains('popup')){
         closePopup(p);
       }
-      document.addEventListener('keydown', (evt)=> {console.log(evt);
+      document.addEventListener('keydown', (evt)=> {
         if(evt.key === 'Escape') { closePopup(p)};
       });
     });
     p.classList.add('popup_opened');
 };
 
-// скрыть попап
+// скрыть попап 
 function closePopup(p) {
-    p.classList.remove('popup_opened');
+    if (p.querySelector('.popup__form')) {
+      p.querySelector('.popup__form').reset();
+    // удаление ошибки
+      p.querySelectorAll('.popup__input-error').forEach(spanError =>{
+        spanError.textContent='';
+      })
+    // удаление стиля ошибки
+      p.querySelectorAll('.popup__input').forEach(inputElement =>{
+        inputElement.classList.remove('popup__input_type_error');
+      })
+      
+      p.classList.remove('popup_opened');
+    }
 };
+
+
 
 //_____________________________
 //  РЕДАКТИРОВАНИЕ ПРОФИЛЯ
@@ -79,7 +92,6 @@ formElementEdit.addEventListener('submit', submitHandler);
 // закрытие попапа редактирования
 buttonCloseEdit.addEventListener('click', () => {
   closePopup(popupEdit); 
-  formElementEdit.reset()
 });
 
 //_____________________________
@@ -145,14 +157,11 @@ function submitHandlerFoto (evt) {
   // создание и добавление корточки
   card = createCard(nameFotoInput.value, linkFotoInput.value);
   addElementInContainer(card, cardsContainer);
-
-  formElementAddFoto.reset();
   closePopup(popupAddCard);
 } 
 formElementAddFoto.addEventListener('submit', submitHandlerFoto);  
 
 // закрытие попапа
 buttonCloseAddFoto.addEventListener('click', () => {
-  closePopup(popupAddCard); 
-  formElementAddFoto.reset();
+  closePopup(popupAddCard);
 });
