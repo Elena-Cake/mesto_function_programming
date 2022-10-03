@@ -46,6 +46,8 @@ function openPopup(p) {
       });
     });
     p.classList.add('popup_opened');
+
+    p.querySelector('.popup__btn-save').classList.add('btn-save_inactive')
 };
 
 // скрыть попап 
