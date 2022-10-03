@@ -37,8 +37,6 @@ const cardsContainer = document.querySelector('.elements');
 
 // показать попап
 function openPopup(p) {
-<<<<<<< HEAD
-<<<<<<< HEAD
   // if (p.querySelector('.popup__input_type_name')){
   //   p.querySelector('.popup__input_type_name').focus();} //why not 
     p.addEventListener('click', (evt)=> {
@@ -51,14 +49,7 @@ function openPopup(p) {
         if(evt.key === 'Escape') { closePopup(p)};
       });
     });
-=======
-
->>>>>>> parent of 5ca05d4 (fear: эскейп)
-=======
-
->>>>>>> parent of 5ca05d4 (fear: эскейп)
     p.classList.add('popup_opened');
-    
 };
 
 // скрыть попап
@@ -171,15 +162,73 @@ formElementAddFoto.addEventListener('submit', submitHandlerFoto);
 buttonCloseAddFoto.addEventListener('click', () => {
   closePopup(popupAddCard); 
   formElementAddFoto.reset();
-}); 
+});
 
+//_____________________________
+//  ВАЛИДАЦИЯ
+//_____________________________
+// span ошибки
+const showInputError = (formElement, inputElement, errorMessage) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add('popup__input_type_error');
+  errorElement.textContent = errorMessage;
+  errorElement.classList.add('popup__input-error_active');
+};
 
-// enableValidation({
-//   formSelector: '.popup__form',
-//   inputSelector: '.popup__input',
-//   submitButtonSelector: '.popup__btn-save',
-//   inactiveButtonClass: 'btn-save_inactive',
-//   inputErrorClass: 'popup__input_type_error',
-//   errorClass: 'popup__input-error_active',
-//   fieldSet: '.popup__set'
-// }); 
+const hideInputError = (formElement, inputElement) => {
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove('popup__input_type_error');
+  errorElement.classList.remove('popup__input-error_active');
+  errorElement.textContent = '';
+};
+
+// проверка на валидность
+const checkInputValidity = (formElement, inputElement) => {
+  if (!inputElement.validity.valid) {
+    showInputError(formElement, inputElement, inputElement.validationMessage);
+  } else {
+    hideInputError(formElement, inputElement);
+  }
+};
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll('.popup__input'));
+  const buttonElement = formElement.querySelector('.popup__btn-save');
+  toggleButtonState(inputList,buttonElement);
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener('input', function () {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputList,buttonElement);
+    });
+  });
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll('.popup__form'));
+  formList.forEach((formElement) => {
+    formElement.addEventListener('submit', function (evt) {
+      evt.preventDefault();
+    });
+    
+    const fieldsetList = Array.from(formElement.querySelectorAll('.popup__set'));
+    
+    fieldsetList.forEach((fieldSet) => {
+      setEventListeners(fieldSet);
+    }); 
+  });
+};
+enableValidation();
+
+function hasInvalidInput(inputList) {
+  return inputList.some((inputElement)=>{
+    return !inputElement.validity.valid;
+  })
+}
+
+function toggleButtonState (inputList, buttonElement) {
+  if (hasInvalidInput(inputList)){
+    buttonElement.classList.add('btn-save_inactive')
+  } else {
+    buttonElement.classList.remove('btn-save_inactive')
+  }
+}
