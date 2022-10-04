@@ -37,8 +37,10 @@ function setEventListeners(formElement) {
 function toggleButtonState (inputList, buttonElement) {
     if (hasInvalidInput(inputList)){
       buttonElement.classList.add(validationObject.inactiveButtonClass)
+      buttonElement.disabled = true;
     } else {
       buttonElement.classList.remove(validationObject.inactiveButtonClass)
+      buttonElement.disabled = false;
     }
 };
 
