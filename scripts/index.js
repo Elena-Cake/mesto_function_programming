@@ -14,6 +14,7 @@ const nameInput = popupEdit.querySelector('.popup__input_type_name');
 const jobInput = popupEdit.querySelector('.popup__input_type_job');
 const formElementEdit =  popupEdit.querySelector('.popup__form');
 const buttonCloseEdit = popupEdit.querySelector('.popup__btn-close');
+const buttonSaveEdit = popupEdit.querySelector('.popup__btn-save');
 
 // попап добавления фото
 const popupAddCard = document.querySelector('.popup-add-card');
@@ -23,6 +24,7 @@ const buttonCloseAddFoto = popupAddCard.querySelector('.popup__btn-close');
 const nameFotoInput = popupAddCard.querySelector('.popup__input_type_name');
 const linkFotoInput = popupAddCard.querySelector('.popup__input_type_job');
 const formElementAddFoto = popupAddCard.querySelector('.popup__form');
+const buttonSaveAddFoto = popupAddCard.querySelector('.popup__btn-save');
 
 // попап просмотра фото
 const popupFoto = document.querySelector('.popup-foto');
@@ -92,6 +94,7 @@ function resetForm(p) {
 // блокировка кнопки
 function deactivateButton(btn) {
   btn.classList.add('btn-save_inactive');
+  btn.disabled = true;
 };
 
 //_____________________________
@@ -102,7 +105,7 @@ function deactivateButton(btn) {
 buttonEdit.addEventListener('click', ()=>{
     resetForm(popupEdit);
     openPopup(popupEdit);
-    deactivateButton(popupEdit.querySelector('.popup__btn-save'))
+    deactivateButton(buttonSaveEdit)
     // присвоение значения title инпутам
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
@@ -163,7 +166,7 @@ buttonCloseEdit.addEventListener('click', () => {
 buttonAddCard.addEventListener('click', ()=>{
   resetForm(popupAddCard);
   openPopup(popupAddCard);
-  deactivateButton(popupAddCard.querySelector('.popup__btn-save'));
+  deactivateButton(buttonSaveAddFoto);
 });
 
 // обработчик «отправки» формы добавления фото
