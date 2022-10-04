@@ -3,8 +3,8 @@
 const titleName = document.querySelector('.profile__name');
 const titleJob = document.querySelector('.profile__job');
 
-const popupList = Array.from(document.querySelectorAll('.popup'))
-
+// попапы
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
 // попап редактирования профиля
 const popupEdit = document.querySelector('.popup-edit');
@@ -35,6 +35,15 @@ const nameFoto = popupFoto.querySelector('.popup__name');
 const cardsContainer = document.querySelector('.elements');
 
 //_____________________________
+//  УНИВЕРСАЛЬНОЕ
+//_____________________________
+
+// добавление кода в html элемент
+function addElementInContainer(element,container) { 
+  container.prepend(element);
+}
+
+//_____________________________
 //  ПОПАП
 //_____________________________
 
@@ -55,7 +64,7 @@ function listenEscape(evt) {
     if (evt.key === 'Escape') {
       closePopup(document.querySelector('.popup_opened'));
     };
-}
+};
 
 // закрытие по оверлею
 popupList.forEach(p => {
@@ -64,7 +73,7 @@ popupList.forEach(p => {
       closePopup(p);
     }
   })
-})
+});
 
 // сброс формы
 function resetForm(p) {
@@ -78,12 +87,12 @@ function resetForm(p) {
     p.querySelectorAll('.popup__input').forEach(inputElement =>{
       inputElement.classList.remove('popup__input_type_error');
     })
-}
+};
 
 // блокировка кнопки
 function deactivateButton(btn) {
   btn.classList.add('btn-save_inactive');
-}
+};
 
 //_____________________________
 //  РЕДАКТИРОВАНИЕ ПРОФИЛЯ
@@ -98,7 +107,7 @@ buttonEdit.addEventListener('click', ()=>{
     nameInput.value = titleName.textContent;
     jobInput.value = titleJob.textContent;
     nameInput.focus();
-} );
+});
 
 // обработчик «отправки» формы редактирования профиля
 function submitHandler (evt) { 
@@ -106,7 +115,7 @@ function submitHandler (evt) {
     titleName.textContent = nameInput.value; 
     titleJob.textContent = jobInput.value; 
     closePopup(popupEdit);
-} 
+};
 formElementEdit.addEventListener('submit', submitHandler);  
 
 // закрытие попапа редактирования
@@ -139,31 +148,13 @@ buttonCloseEdit.addEventListener('click', () => {
     cardFoto.addEventListener ('click', ()=> openFoto (name, link));
     
     return cardElement;
-  }
-
- // открытие попапа фото  
- function openFoto (name, link) {
-    openPopup(popupFoto);
-    imgFoto.src = link;
-    imgFoto.alt = `${name} на фотографии`;
-    nameFoto.textContent = name;
- }
-
-// закрытие попапа фото
-buttonCloseFoto.addEventListener('click', () => {
-  closePopup(popupFoto);
-}); 
+  };
 
 // добавление массив фотографий
   initialCards.forEach(item => {
     const card = createCard(item.name , item.link);
     addElementInContainer(card ,cardsContainer)
   });
-
-// добавление кода в html элемент
-function addElementInContainer(element,container) { 
-  container.prepend(element);
-} 
 
 //_____________________________
 //  ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
@@ -173,7 +164,7 @@ buttonAddCard.addEventListener('click', ()=>{
   resetForm(popupAddCard);
   openPopup(popupAddCard);
   deactivateButton(popupAddCard.querySelector('.popup__btn-save'));
-})
+});
 
 // обработчик «отправки» формы добавления фото
 function submitHandlerFoto (evt) { 
@@ -182,10 +173,27 @@ function submitHandlerFoto (evt) {
   card = createCard(nameFotoInput.value, linkFotoInput.value);
   addElementInContainer(card, cardsContainer);
   closePopup(popupAddCard);
-} 
+};
 formElementAddFoto.addEventListener('submit', submitHandlerFoto);  
 
 // закрытие попапа
 buttonCloseAddFoto.addEventListener('click', () => {
   closePopup(popupAddCard);
 });
+
+//_____________________________
+//  ПОПАП ФОТО
+//_____________________________
+
+ // открытие попапа фото  
+ function openFoto (name, link) {
+  openPopup(popupFoto);
+  imgFoto.src = link;
+  imgFoto.alt = `${name} на фотографии`;
+  nameFoto.textContent = name;
+};
+
+// закрытие попапа фото
+buttonCloseFoto.addEventListener('click', () => {
+closePopup(popupFoto);
+}); 
