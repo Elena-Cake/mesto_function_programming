@@ -41,7 +41,7 @@ const cardsContainer = document.querySelector('.elements');
 // добавление кода в html элемент
 function addElementInContainer(element,container) { 
   container.prepend(element);
-}
+};
 
 //_____________________________
 //  ПОПАП
